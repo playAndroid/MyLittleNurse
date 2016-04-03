@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/page1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/xingmingzu"
+                    style="@style/add_text"
+                    android:text="    "
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/xingming"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="患者姓名"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.CustomEditText
+                    android:id="@+id/xin_counter"
+                    style="@style/add_edit"
+                    android:layout_toLeftOf="@id/xingmingzu"
+                    android:layout_toRightOf="@id/xingming"
+                    android:hint="输入姓名"
+                    android:inputType="text"
+                    android:maxLength="8"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="14sp" />
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/nianlingzu"
+                    style="@style/add_text"
+                    android:text="岁"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/nianling"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="患者年龄"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.CustomEditText
+                    android:id="@+id/nianling_counter"
+                    style="@style/add_edit"
+                    android:layout_toLeftOf="@id/nianlingzu"
+                    android:layout_toRightOf="@id/nianling"
+                    android:hint="输入年龄"
+                    android:maxLength="8"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="14sp" />
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:paddingLeft="20dp">
+
+                <!--<TextView-->
+                <!--android:id="@+id/xingbiezu"-->
+                <!--style="@style/add_text"-->
+                <!--android:text="   "-->
+                <!--android:textSize="14sp" />-->
+
+                <TextView
+                    android:id="@+id/xingbie"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="性别"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.nicespinner.NiceSpinner
+                    android:id="@+id/nice_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+                <!--<nurse.little.com.mylittlenurse.view.CustomEditText-->
+                <!--android:id="@+id/xingbie_counter"-->
+                <!--style="@style/add_edit"-->
+                <!--android:layout_toLeftOf="@id/xingbiezu"-->
+                <!--android:layout_toRightOf="@id/xingbie"-->
+
+                <!--android:hint="输入性别"-->
+                <!--android:inputType="text"-->
+                <!--android:maxLength="1"-->
+                <!--android:textColorHint="@color/text_hint_color"-->
+                <!--android:textSize="14sp" />-->
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/shengaozu"
+                    style="@style/add_text"
+                    android:text="cm"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/shengao"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="身高"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.CustomEditText
+                    android:id="@+id/shengao_counter"
+                    style="@style/add_edit"
+                    android:layout_toLeftOf="@id/shengaozu"
+                    android:layout_toRightOf="@id/shengao"
+                    android:hint="输入身高"
+                    android:maxLength="8"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="14sp" />
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/tizhongzu"
+                    style="@style/add_text"
+                    android:text="kg"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tizhong"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="干体重"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.CustomEditText
+                    android:id="@+id/tizhong_counter"
+                    style="@style/add_edit"
+                    android:layout_toLeftOf="@id/tizhongzu"
+                    android:layout_toRightOf="@id/tizhong"
+                    android:hint="输入体重"
+                    android:maxLength="8"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="14sp" />
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <nurse.little.com.mylittlenurse.view.CustomView
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/dianhuazu"
+                    style="@style/add_text"
+                    android:text="tel"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/dianhua"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="电话"
+                    android:textSize="14sp" />
+
+                <nurse.little.com.mylittlenurse.view.CustomEditText
+                    android:id="@+id/dianhuazu_counter"
+                    style="@style/add_edit"
+                    android:layout_toLeftOf="@id/dianhuazu"
+                    android:layout_toRightOf="@id/dianhua"
+                    android:hint="输入电话"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="14sp" />
+            </nurse.little.com.mylittlenurse.view.CustomView>
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_week_riqi"-->
+                <!--style="@style/add_real_accretion"-->
+                <!--android:paddingLeft="20dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/riqizu"-->
+                    <!--style="@style/add_text"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:scaleType="center"-->
+                    <!--android:src="@drawable/apk_sent_keyboard_new"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/riqi"-->
+                    <!--style="@style/add_title"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:text="每周透析日期"-->
+                    <!--android:textSize="14sp" />-->
+            <!--</RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:paddingLeft="20dp">
+
+                <nurse.little.com.mylittlenurse.view.nicespinner.NiceSpinner
+                    android:id="@+id/jingmaizu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/jingmai"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="静脉脉漏"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/luruhuayan"
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/huayandan"
+                    style="@style/add_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:scaleType="center"
+                    android:src="@drawable/apk_mine_addphoto"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/huayan"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="录入化验单"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/luruyingyang"
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/yingyangzu"
+                    style="@style/add_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:scaleType="center"
+                    android:src="@drawable/apk_sent_emotion_new"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/yingyang"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="营养状态录入"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/lurubingshi"-->
+                <!--style="@style/add_real_accretion"-->
+                <!--android:paddingLeft="20dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/bingshizu"-->
+                    <!--style="@style/add_text"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="25dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:scaleType="center"-->
+                    <!--android:src="@drawable/apk_anlysis_ic_bill"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/bingshi"-->
+                    <!--style="@style/add_title"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:text="病史录入"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--&lt;!&ndash;<Spinner&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/spinner"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignBottom="@+id/bingshizu"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_toEndOf="@+id/bingshi"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_marginStart="23dp" />&ndash;&gt;-->
+
+            <!--</RelativeLayout>-->
+
+        </LinearLayout>
+
+        <!--<TextView-->
+        <!--android:id="@+id/page2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_below="@+id/page1"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:background="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:text="单位说明: 年龄:岁 , 身高:cm , 体重:kg "-->
+        <!--android:textColor="#666"-->
+        <!--android:textSize="14sp" />-->
+
+        <View
+            style="@style/divider1"
+            android:layout_below="@+id/page1"
+            android:layout_marginTop="3dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/updata"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/enter_butn_updata"
+                android:text="提交"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

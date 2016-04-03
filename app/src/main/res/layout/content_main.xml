@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeview.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--<TextView-->
+        <!--android:id="@+id/calendarCenter"-->
+        <!--style="@style/main_bar_text_style"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_margin="8dp" />-->
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/calendarLeft"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:background="@null"-->
+        <!--android:contentDescription="@null"-->
+        <!--android:padding="8dp"-->
+        <!--android:src="@drawable/calendar_month_left" />-->
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/calendarRight"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@null"-->
+        <!--android:contentDescription="@null"-->
+        <!--android:padding="8dp"-->
+        <!--android:src="@drawable/calendar_month_right" />-->
+
+        <!--<nurse.little.com.mylittlenurse.view.CalendarView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true" />-->
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="日历"-->
+        <!--android:textColor="#000"-->
+        <!--android:textSize="18sp" />-->
+    </RelativeLayout>
+
+
+    <View
+        style="@style/divider1"
+        android:layout_alignTop="@+id/radio_group" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_group1"
+            style="@style/main_tab_bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:height="1dp"
+            android:drawableTop="@drawable/tab_index1"
+            android:tag="radio_button0"
+            android:text="录入信息" />
+
+        <RadioButton
+            android:id="@+id/radio_group2"
+            style="@style/main_tab_bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_index2"
+            android:tag="radio_button1"
+            android:text="信息预览" />
+
+        <RadioButton
+            android:id="@+id/radio_group3"
+            style="@style/main_tab_bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_index3"
+            android:tag="radio_button2"
+            android:text="宣教内容" />
+    </RadioGroup>
+</RelativeLayout>

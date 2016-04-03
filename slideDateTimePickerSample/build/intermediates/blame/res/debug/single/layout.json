@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_time.xml",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\layout\\fragment_time.xml"
+    },
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\layout\\custom_tab.xml",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\layout\\custom_tab.xml"
+    },
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_date.xml",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\layout\\fragment_date.xml"
+    },
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sample.xml",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\layout\\activity_sample.xml"
+    },
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\layout\\slide_date_time_picker.xml",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\layout\\slide_date_time_picker.xml"
+    }
+]

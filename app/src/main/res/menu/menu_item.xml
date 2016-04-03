@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <group
+        android:checkableBehavior="single"
+        android:title="Home items">
+
+        <item
+            android:id="@+id/message_look"
+            android:icon="@drawable/apk_all_bottomb2c_up"
+            android:title="档案预览" />
+        <item
+            android:id="@+id/brocat_content"
+            android:icon="@drawable/apk_all_bottommine_up"
+            android:title="宣教内容" />
+        <item
+            android:id="@+id/enter_message"
+            android:icon="@drawable/apk_all_bottomta_up"
+            android:title="录入信息" />
+        <!--<item-->
+            <!--android:id="@+id/enter_bingshi"-->
+            <!--android:icon="@drawable/apk_all_bottomta_up"-->
+            <!--android:title="病史录入" />-->
+
+    </group>
+
+    <!--<item android:title="Sub items">-->
+
+    <!--<menu>-->
+
+    <!--<item-->
+    <!--android:id="@+id/sub_exit"-->
+    <!--android:title="退出应用" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/sub_switch"-->
+    <!--android:title="切换主题" />-->
+    <!--</menu>-->
+    <!--</item>-->
+
+</menu>

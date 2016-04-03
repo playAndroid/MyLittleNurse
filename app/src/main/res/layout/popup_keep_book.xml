@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@android:style/Widget.Holo.PopupWindow"
+    android:background="@drawable/border_style"
+    android:orientation="vertical">
+
+    <!--<nurse.little.com.mylittlenurse.view.CalendarCard-->
+    <!--android:id="@+id/popu_caleandar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="300dp">-->
+
+    <!--</nurse.little.com.mylittlenurse.view.CalendarCard>-->
+    <!--<CalendarView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="300dp">-->
+
+    <!--</CalendarView>-->
+    <EditText
+        android:id="@+id/luruneirong"
+        style="@android:style/Widget.Holo.PopupWindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入化验单内容"
+
+        android:minLines="5"
+        android:textColor="#333" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quxiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/enter_butn_updata"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/queren"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/enter_butn_updata"
+            android:text="确认"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+</LinearLayout>

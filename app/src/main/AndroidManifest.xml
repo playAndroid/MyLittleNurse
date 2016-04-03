@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nurse.little.com.mylittlenurse">
+
+    <application
+        android:name=".bast.NurseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 病史界面-->
+        <activity
+            android:name=".entermessage.SickHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- 病史详情界面-->
+        <activity
+            android:name=".entermessage.SicHistoryDetailsAcitivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".messagelook.activity.DetailsMessageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <!--&lt;!&ndash; 宣教界面&ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name=".broadcastmess.BroadCatmessActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:screenOrientation="portrait" />-->
+        <!--&lt;!&ndash; 录入信息界面&ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name=".entermessage.EnterMessageActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:screenOrientation="portrait" />-->
+        <!--&lt;!&ndash; 病人信息预览&ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name=".messagelook.MessageLookActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:screenOrientation="portrait" />-->
+    </application>
+
+</manifest>

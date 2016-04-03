@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\selection_divider.9.png",
+        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\drawable-hdpi-v4\\selection_divider.9.png"
+    }
+]

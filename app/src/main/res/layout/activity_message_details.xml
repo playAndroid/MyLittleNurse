@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/page1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    style="@style/add_real_accretion"
+                    android:paddingLeft="20dp">
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/xingmingzu"-->
+                    <!--style="@style/add_text"-->
+                    <!--android:text="    "-->
+                    <!--android:textSize="14sp" />-->
+
+                    <TextView
+                        android:id="@+id/xingming"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="患者姓名"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_xing_ming"
+                        style="@style/add_edit"
+                        android:layout_toLeftOf="@id/xingmingzu"
+                        android:layout_toRightOf="@id/xingming"
+                        android:paddingRight="0dp"
+                        android:text="姓名"
+                        android:textColor="@color/six_three"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RelativeLayout
+                    style="@style/add_real_accretion"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/nianlingzu"
+                        style="@style/add_text"
+                        android:text="岁"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/nianling"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="患者年龄"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_nianling"
+                        style="@style/add_edit"
+                        android:layout_toLeftOf="@+id/nianlingzu"
+                        android:inputType="text"
+                        android:maxLength="8"
+                        android:paddingRight="0dp"
+                        android:text="输入年龄"
+                        android:textColor="@color/six_three"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/xingbiezu"-->
+                    <!--style="@style/add_text"-->
+                    <!--android:text="   "-->
+                    <!--android:textSize="14sp" />-->
+
+                    <TextView
+                        android:id="@+id/xingbie"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="性别"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="女"
+                        android:textColor="@color/six_three"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RelativeLayout
+                    style="@style/add_real_accretion"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/shengaozu"
+                        style="@style/add_text"
+                        android:text="cm"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/shengao"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="身高"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/shengao_counter"
+                        style="@style/add_edit"
+                        android:layout_toLeftOf="@id/shengaozu"
+                        android:layout_toRightOf="@id/shengao"
+                        android:maxLength="8"
+                        android:paddingRight="0dp"
+                        android:text="输入身高"
+                        android:textColor="@color/six_three"
+                        android:textColorHint="@color/text_hint_color"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View style="@style/divider1" />
+
+                <RelativeLayout
+                    style="@style/add_real_accretion"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/tizhongzu"
+                        style="@style/add_text"
+                        android:text="kg"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tizhong"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="干体重"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tizhong_counter"
+                        style="@style/add_edit"
+                        android:layout_toLeftOf="@id/tizhongzu"
+                        android:layout_toRightOf="@id/tizhong"
+                        android:maxLength="8"
+                        android:paddingRight="0dp"
+                        android:text="输入体重"
+                        android:textColor="@color/six_three"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RelativeLayout
+                    style="@style/add_real_accretion"
+                    android:paddingLeft="20dp">
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/dianhuazu"-->
+                    <!--style="@style/add_text"-->
+                    <!--android:text="   "-->
+                    <!--android:textSize="14sp" />-->
+
+                    <TextView
+                        android:id="@+id/dianhua"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="电话"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/dianhuazu_counter"
+                        style="@style/add_edit"
+                        android:layout_toLeftOf="@id/dianhuazu"
+                        android:layout_toRightOf="@id/dianhua"
+                        android:paddingRight="0dp"
+                        android:text="输入电话"
+                        android:textColor="@color/six_three"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:id="@+id/jingmaizu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="GVA"
+                        android:textColor="@color/six_three" />
+
+                    <TextView
+                        android:id="@+id/jingmai"
+                        style="@style/add_title"
+                        android:layout_alignParentTop="true"
+                        android:text="静脉脉漏"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/luruhuayan"
+                    style="@style/add_real_accretion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/huayan"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="化验单"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/huayandan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="化验单详情"
+                        android:textColor="@color/six_three"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/luruyingyang"
+                    style="@style/add_real_accretion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+
+                    <TextView
+                        android:id="@+id/yingyang"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="营养状态"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/yingyangzu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="营养状态详情"
+                        android:textColor="@color/six_three"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/divider1"
+                android:layout_below="@+id/page1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

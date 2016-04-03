@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_style"
+    android:orientation="vertical">
+
+    <!--<nurse.little.com.mylittlenurse.view.CalendarCard-->
+    <!--android:id="@+id/popu_caleandar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="300dp">-->
+
+    <!--</nurse.little.com.mylittlenurse.view.CalendarCard>-->
+    <!--<CalendarView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="300dp">-->
+
+    <!--</CalendarView>-->
+    <LinearLayout
+        android:id="@+id/week_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quxiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/enter_butn_updata"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/queren"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/enter_butn_updata"
+            android:text="确认"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+</LinearLayout>
