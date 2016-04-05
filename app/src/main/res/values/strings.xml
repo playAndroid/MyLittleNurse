@@ -17,7 +17,8 @@
     <string name="change">修改</string>
     <string name="alldelete">全部删除</string>
     <string name="entersick">病史录入</string>
-    <string name="save">保存排班</string>
+    <string name="save">保存修改</string>
+    <string name="detele">删除数据</string>
 
     <string name="sunday">日</string>
     <string name="monday">一</string>

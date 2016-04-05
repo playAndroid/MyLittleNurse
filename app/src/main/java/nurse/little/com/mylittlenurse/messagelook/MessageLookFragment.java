@@ -23,7 +23,6 @@ import nurse.little.com.mylittlenurse.bast.BaseFragment;
 import nurse.little.com.mylittlenurse.bast.NurseApplication;
 import nurse.little.com.mylittlenurse.bast.TableName;
 import nurse.little.com.mylittlenurse.messagelook.activity.DetailsMessageActivity;
-import nurse.little.com.mylittlenurse.utils.ShowToastUtils;
 
 /**
  * 信息预览
@@ -101,7 +100,6 @@ public class MessageLookFragment extends BaseFragment {
         messageLookAdapter.setOnItemClickLitener(new MessageLookAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view, int position, SickPeople people) {
-                ShowToastUtils.Short("点击了" + position);
                 /**
                  * 跳转详情页
                  */
@@ -116,7 +114,6 @@ public class MessageLookFragment extends BaseFragment {
 
             @Override
             public void onItemLongClick(View view, final int position, final SickPeople people) {
-                ShowToastUtils.Short("长按了" + position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("是否删除改条数据");
                 builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -140,5 +137,7 @@ public class MessageLookFragment extends BaseFragment {
             }
         });
     }
+
+
 
 }

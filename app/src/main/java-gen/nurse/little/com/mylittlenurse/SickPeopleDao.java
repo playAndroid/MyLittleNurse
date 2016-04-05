@@ -34,6 +34,7 @@ public class SickPeopleDao extends AbstractDao<SickPeople, Long> {
         public final static Property Mailou = new Property(8, String.class, "mailou", false, "MAILOU");
         public final static Property Huayan = new Property(9, String.class, "huayan", false, "HUAYAN");
         public final static Property Yingyang = new Property(10, String.class, "yingyang", false, "YINGYANG");
+        public final static Property Bingshi = new Property(11, String.class, "bingshi", false, "BINGSHI");
     };
 
 
@@ -59,7 +60,8 @@ public class SickPeopleDao extends AbstractDao<SickPeople, Long> {
                 "\"TIME\" TEXT," + // 7: time
                 "\"MAILOU\" TEXT," + // 8: mailou
                 "\"HUAYAN\" TEXT," + // 9: huayan
-                "\"YINGYANG\" TEXT);"); // 10: yingyang
+                "\"YINGYANG\" TEXT," + // 10: yingyang
+                "\"BINGSHI\" TEXT);"); // 11: bingshi
     }
 
     /** Drops the underlying database table. */
@@ -123,6 +125,11 @@ public class SickPeopleDao extends AbstractDao<SickPeople, Long> {
         if (yingyang != null) {
             stmt.bindString(11, yingyang);
         }
+ 
+        String bingshi = entity.getBingshi();
+        if (bingshi != null) {
+            stmt.bindString(12, bingshi);
+        }
     }
 
     /** @inheritdoc */
@@ -145,7 +152,8 @@ public class SickPeopleDao extends AbstractDao<SickPeople, Long> {
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // time
             cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // mailou
             cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // huayan
-            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10) // yingyang
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // yingyang
+            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11) // bingshi
         );
         return entity;
     }
@@ -164,6 +172,7 @@ public class SickPeopleDao extends AbstractDao<SickPeople, Long> {
         entity.setMailou(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
         entity.setHuayan(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
         entity.setYingyang(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
+        entity.setBingshi(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
      }
     
     /** @inheritdoc */

@@ -107,13 +107,14 @@ public class EnterMessageFragment extends BaseFragment {
 //    private SharedPreferences.Editor edit;
     private static final String ENTER_YINGYANG = "yingyang";
     private static final String ENTER_HUAYAN = "huayan";
+    private static final String ENTER_BINGSHI = "bingshi";
     private StringBuffer setDataTimeList;//存储按下日历的集合
     private ScrollView scroll_view;
+    private RelativeLayout lurubingshi;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.i("onCreate执行了");
         context = getContext();
 //        sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
 //        edit = sp.edit();
@@ -122,7 +123,6 @@ public class EnterMessageFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Logger.i("onCreateView执行了");
         View view = inflater.inflate(R.layout.activity_enter_message, container, false);
         niceSpinner = (NiceSpinner) view.findViewById(R.id.nice_spinner);
         jingmaizu = (NiceSpinner) view.findViewById(R.id.jingmaizu);
@@ -135,7 +135,7 @@ public class EnterMessageFragment extends BaseFragment {
         luruyingyang = (RelativeLayout) view.findViewById(R.id.luruyingyang);
         tiJiao = (Button) view.findViewById(R.id.updata);
         scroll_view = (ScrollView) view.findViewById(R.id.scroll_view);
-//        lurubingshi = (RelativeLayout) view.findViewById(R.id.lurubingshi);
+        lurubingshi = (RelativeLayout) view.findViewById(R.id.lurubingshi);
 
 //        rl_week_riqi = (RelativeLayout) view.findViewById(R.id.rl_week_riqi);
 
@@ -150,7 +150,6 @@ public class EnterMessageFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Logger.i("onActivityCreated执行了");
         initSpinner();
         registerListener();
     }
@@ -233,7 +232,6 @@ public class EnterMessageFragment extends BaseFragment {
                 if (!TextUtils.isEmpty(stringHuayan)) {
                     luruneirong.setText(stringHuayan);
                 }
-//                luruneirong.setHint(string);
                 View queren = view.findViewById(R.id.queren);
                 View quxiao = view.findViewById(R.id.quxiao);
                 showPopupWindow(view);
@@ -295,25 +293,54 @@ public class EnterMessageFragment extends BaseFragment {
             }
 
         });
-//        lurubingshi.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                View view = View.inflate(getContext(), R.layout.popop_sickhistory, null);
-////                showPopupWindow(view);
-////                new SlideDateTimePicker.Builder(getFragmentManager())
-////                        .setListener(listener)
-////                        .setInitialDate(new Date())
-////                        .build()
-////                        .show();
-//                Intent intent = new Intent(getContext(), SickHistoryActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        lurubingshi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                View view = View.inflate(getContext(), R.layout.popop_sickhistory, null);
+//                showPopupWindow(view);
+//                new SlideDateTimePicker.Builder(getFragmentManager())
+//                        .setListener(listener)
+//                        .setInitialDate(new Date())
+//                        .build()
+//                        .show();
+
+                View view = View.inflate(getContext(), R.layout.popup_keep_book, null);
+//                view.getParent().getc
+                final EditText luruneirong = (EditText) view.findViewById(R.id.luruneirong);
+                luruneirong.setHint("输入病史");
+
+                String stringHuayan = (String) SPUtils.get(context, ENTER_BINGSHI, "");
+                if (!TextUtils.isEmpty(stringHuayan)) {
+                    luruneirong.setText(stringHuayan);
+                }
+                View queren = view.findViewById(R.id.queren);
+                View quxiao = view.findViewById(R.id.quxiao);
+                showPopupWindow(view);
+                queren.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String bingShi = luruneirong.getText().toString().trim();
+                        SPUtils.put(context, ENTER_BINGSHI, bingShi);
+                        if (popupWindow.isShowing()) {
+                            popupWindow.dismiss();
+                        }
+                    }
+                });
+                quxiao.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (popupWindow.isShowing()) {
+                            popupWindow.dismiss();
+                        }
+                    }
+                });
+
+            }
+        });
     }
 
     private void showPopupWindow(View view) {
         popupWindow = new PopupWindow(view, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, false);
-//                popupWindow.setContentView(view);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
@@ -354,13 +381,6 @@ public class EnterMessageFragment extends BaseFragment {
                 || TextUtils.isEmpty(dianhuaStr)) {
             return false;
         }
-
-//        if (xingmingStr.equals(sickPeopleDao.queryRaw("SickPeopleDao.Properties.Name = ?", xingmingStr))) {
-//            ShowToastUtils.Short("姓名已存在");
-//            Logger.e(String.valueOf(sickPeopleDao.queryRaw("NAME = ?", xingmingStr)));
-//            return false;
-//        }
-
         return true;
     }
 
@@ -374,13 +394,11 @@ public class EnterMessageFragment extends BaseFragment {
         niceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "" + dataset.get(position), Toast.LENGTH_SHORT).show();
                 xingbie = dataset.get(position);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-//                Toast.makeText(getContext(), "onNothingSelected", Toast.LENGTH_SHORT).show();
             }
         });
         dataset1 = new LinkedList<>(Arrays.asList("其他", "AVF", "AVG", "CUC"));
@@ -389,7 +407,6 @@ public class EnterMessageFragment extends BaseFragment {
         jingmaizu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "" + dataset1.get(position), Toast.LENGTH_SHORT).show();
                 jingmai = dataset1.get(position);
             }
 
@@ -417,6 +434,7 @@ public class EnterMessageFragment extends BaseFragment {
         people.setMailou(jingmai);
         people.setHuayan((String) SPUtils.get(context, ENTER_HUAYAN, "未录入化验单"));
         people.setYingyang((String) SPUtils.get(context, ENTER_YINGYANG, "未录入营养单"));
+        people.setBingshi((String) SPUtils.get(context, ENTER_BINGSHI, "未录入病史记录"));
         /**
          *
          this.id = id;
@@ -462,15 +480,8 @@ public class EnterMessageFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Logger.i("onDestroy执行");
-//        edit.putString("huayandan", "");
-//        edit.commit();
-//        if (edit != null) {
-//            edit.clear();
-//            edit.commit();
-//        }
-//        SPUtils.clear(context);
         SPUtils.remove(context, ENTER_HUAYAN);
         SPUtils.remove(context, ENTER_YINGYANG);
+        SPUtils.remove(context, ENTER_BINGSHI);
     }
 }

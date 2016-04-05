@@ -43,15 +43,17 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_xing_ming"
                         style="@style/add_edit"
                         android:layout_toLeftOf="@id/xingmingzu"
                         android:layout_toRightOf="@id/xingming"
+                        android:editable="false"
+                        android:inputType="text"
                         android:paddingRight="0dp"
                         android:text="姓名"
                         android:textColor="@color/six_three"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
                 <View
@@ -77,7 +79,7 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_nianling"
                         style="@style/add_edit"
                         android:layout_toLeftOf="@+id/nianlingzu"
@@ -86,7 +88,7 @@
                         android:paddingRight="0dp"
                         android:text="输入年龄"
                         android:textColor="@color/six_three"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
                 <View
@@ -114,12 +116,13 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:editable="false"
                         android:text="女"
                         android:textColor="@color/six_three"
                         android:textSize="14sp" />
@@ -148,7 +151,7 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/shengao_counter"
                         style="@style/add_edit"
                         android:layout_toLeftOf="@id/shengaozu"
@@ -158,7 +161,7 @@
                         android:text="输入身高"
                         android:textColor="@color/six_three"
                         android:textColorHint="@color/text_hint_color"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
                 <View style="@style/divider1" />
@@ -181,7 +184,7 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tizhong_counter"
                         style="@style/add_edit"
                         android:layout_toLeftOf="@id/tizhongzu"
@@ -190,7 +193,7 @@
                         android:paddingRight="0dp"
                         android:text="输入体重"
                         android:textColor="@color/six_three"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
                 <View
@@ -216,7 +219,7 @@
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/dianhuazu_counter"
                         style="@style/add_edit"
                         android:layout_toLeftOf="@id/dianhuazu"
@@ -224,7 +227,7 @@
                         android:paddingRight="0dp"
                         android:text="输入电话"
                         android:textColor="@color/six_three"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
                 <View
@@ -238,14 +241,15 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/jingmaizu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:text="GVA"
-                        android:textColor="@color/six_three" />
+                        android:textColor="@color/six_three"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/jingmai"
@@ -272,20 +276,21 @@
                     <TextView
                         android:id="@+id/huayan"
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:gravity="center_vertical"
                         android:text="化验单"
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/huayandan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="0dp"
                         android:text="化验单详情"
                         android:textColor="@color/six_three"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <View
@@ -305,32 +310,63 @@
                     <TextView
                         android:id="@+id/yingyang"
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:gravity="center_vertical"
                         android:text="营养状态"
                         android:textColor="@color/gray_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/yingyangzu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="0dp"
                         android:text="营养状态详情"
                         android:textColor="@color/six_three"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
+                <View
+                    style="@style/divider1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
+                <LinearLayout
+                    android:id="@+id/lurubingshi"
+                    style="@style/add_real_accretion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/bingshi"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="病史"
+                        android:textColor="@color/gray_text"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/bingshidan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="0dp"
+                        android:text="病史详情"
+                        android:textColor="@color/six_three"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    style="@style/divider1"
+                    android:layout_below="@+id/page1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp" />
             </LinearLayout>
-
-
-            <View
-                style="@style/divider1"
-                android:layout_below="@+id/page1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="3dp" />
         </LinearLayout>
     </ScrollView>
 

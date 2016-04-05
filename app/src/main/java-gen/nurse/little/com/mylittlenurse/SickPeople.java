@@ -21,6 +21,7 @@ public class SickPeople implements Serializable{
     private String mailou;
     private String huayan;
     private String yingyang;
+    private String bingshi;
 
     public SickPeople() {
     }
@@ -29,7 +30,7 @@ public class SickPeople implements Serializable{
         this.id = id;
     }
 
-    public SickPeople(Long id, String name, String age, String sex, String height, String weight, String tel, String time, String mailou, String huayan, String yingyang) {
+    public SickPeople(Long id, String name, String age, String sex, String height, String weight, String tel, String time, String mailou, String huayan, String yingyang, String bingshi) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -41,6 +42,7 @@ public class SickPeople implements Serializable{
         this.mailou = mailou;
         this.huayan = huayan;
         this.yingyang = yingyang;
+        this.bingshi = bingshi;
     }
 
     public Long getId() {
@@ -131,6 +133,14 @@ public class SickPeople implements Serializable{
 
     public void setYingyang(String yingyang) {
         this.yingyang = yingyang;
+    }
+
+    public String getBingshi() {
+        return bingshi;
+    }
+
+    public void setBingshi(String bingshi) {
+        this.bingshi = bingshi;
     }
 
 }

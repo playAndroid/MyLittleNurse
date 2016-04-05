@@ -42,7 +42,7 @@ public class DiaylsDateDao extends AbstractDao<DiaylsDate, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"DIAYLS_DATE\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
-                "\"DATE\" TEXT," + // 1: date
+                "\"DATE\" TEXT UNIQUE ," + // 1: date
                 "\"NAME\" TEXT);"); // 2: name
     }
 

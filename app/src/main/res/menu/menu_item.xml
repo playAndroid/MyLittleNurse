@@ -6,7 +6,10 @@
     <group
         android:checkableBehavior="single"
         android:title="Home items">
-
+        <item
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/apk_all_bottommeetyou_up"
+            android:title="主   页" />
         <item
             android:id="@+id/message_look"
             android:icon="@drawable/apk_all_bottomb2c_up"
@@ -20,9 +23,14 @@
             android:icon="@drawable/apk_all_bottomta_up"
             android:title="录入信息" />
         <!--<item-->
-            <!--android:id="@+id/enter_bingshi"-->
-            <!--android:icon="@drawable/apk_all_bottomta_up"-->
-            <!--android:title="病史录入" />-->
+        <!--android:id="@+id/enter_bingshi"-->
+        <!--android:icon="@drawable/apk_all_bottommeetyou_up"-->
+        <!--android:title="@string/entersick"-->
+        <!--/>-->
+        <!--<item-->
+        <!--android:id="@+id/enter_bingshi"-->
+        <!--android:icon="@drawable/apk_all_bottomta_up"-->
+        <!--android:title="病史录入" />-->
 
     </group>
 

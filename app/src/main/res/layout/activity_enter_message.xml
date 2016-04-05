@@ -286,37 +286,37 @@
                     android:textSize="14sp" />
             </RelativeLayout>
 
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/lurubingshi"-->
-                <!--style="@style/add_real_accretion"-->
-                <!--android:paddingLeft="20dp">-->
+            <RelativeLayout
+                android:id="@+id/lurubingshi"
+                style="@style/add_real_accretion"
+                android:paddingLeft="20dp">
 
-                <!--<ImageView-->
-                    <!--android:id="@+id/bingshizu"-->
-                    <!--style="@style/add_text"-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="25dp"-->
-                    <!--android:layout_centerVertical="true"-->
-                    <!--android:scaleType="center"-->
-                    <!--android:src="@drawable/apk_anlysis_ic_bill"-->
-                    <!--android:textSize="14sp" />-->
+                <ImageView
+                    android:id="@+id/bingshizu"
+                    style="@style/add_text"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="center"
+                    android:src="@drawable/apk_anlysis_ic_bill"
+                    android:textSize="14sp" />
 
-                <!--<TextView-->
-                    <!--android:id="@+id/bingshi"-->
-                    <!--style="@style/add_title"-->
-                    <!--android:layout_alignParentTop="true"-->
-                    <!--android:text="病史录入"-->
-                    <!--android:textSize="14sp" />-->
+                <TextView
+                    android:id="@+id/bingshi"
+                    style="@style/add_title"
+                    android:layout_alignParentTop="true"
+                    android:text="病史录入"
+                    android:textSize="14sp" />
 
-                <!--&lt;!&ndash;<Spinner&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:id="@+id/spinner"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_alignBottom="@+id/bingshizu"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_toEndOf="@+id/bingshi"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_marginStart="23dp" />&ndash;&gt;-->
+                <!--<Spinner-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/spinner"-->
+                <!--android:layout_alignBottom="@+id/bingshizu"-->
+                <!--android:layout_toEndOf="@+id/bingshi"-->
+                <!--android:layout_marginStart="23dp" />-->
 
-            <!--</RelativeLayout>-->
+            </RelativeLayout>
 
         </LinearLayout>
 

@@ -1,6 +1,5 @@
 package nurse.little.com.mylittlenurse.ui;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -18,9 +17,9 @@ import nurse.little.com.mylittlenurse.bast.BaseActivity;
 import nurse.little.com.mylittlenurse.broadcastmess.BroadCatmessFragment;
 import nurse.little.com.mylittlenurse.entermessage.EnterMessageFragment;
 import nurse.little.com.mylittlenurse.entermessage.OnUpDataListener;
-import nurse.little.com.mylittlenurse.entermessage.SickHistoryActivity;
 import nurse.little.com.mylittlenurse.homeview.HomeFragment;
 import nurse.little.com.mylittlenurse.messagelook.MessageLookFragment;
+import nurse.little.com.mylittlenurse.utils.FragmentFactory;
 import nurse.little.com.mylittlenurse.utils.ShowToastUtils;
 
 /**
@@ -36,6 +35,7 @@ public class MainActivity extends BaseActivity {
     private MenuItem navigaItem;
     protected long endTime;
     private Toolbar toolbar;
+    private boolean isHome = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,8 @@ public class MainActivity extends BaseActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         initView();
         registerListener();
-        replaceFragment(new HomeFragment());
+//        replaceFragment(new HomeFragment());
+        replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
     }
 
 
@@ -105,25 +106,37 @@ public class MainActivity extends BaseActivity {
                 navigaItem = item;
                 switch (itemId) {
                     case R.id.enter_message:
+                        isHome = false;
                         EnterMessageFragment enterMessageFragment = new EnterMessageFragment();
                         enterMessageFragment.setOnUpDataListener(new OnUpDataListener() {
                             @Override
                             public void upDataSuccess() {
-                                replaceFragment(new HomeFragment());
+                                isHome = true;
+//                                replaceFragment(new HomeFragment());
+                                replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
                             }
                         });
                         replaceFragment(enterMessageFragment);
                         break;
                     case R.id.message_look:
-                        replaceFragment(new MessageLookFragment());
+                        isHome = false;
+//                        replaceFragment(new MessageLookFragment());
+                        replaceFragment(FragmentFactory.createFragment(MessageLookFragment.class));
                         break;
                     case R.id.brocat_content:
-                        replaceFragment(new BroadCatmessFragment());
+                        isHome = false;
+//                        replaceFragment(new BroadCatmessFragment());
+                        replaceFragment(FragmentFactory.createFragment(BroadCatmessFragment.class));
                         break;
 //                    case R.id.enter_bingshi:
 //                        Intent intent = new Intent(MainActivity.this, SickHistoryActivity.class);
 //                        startActivity(intent);
 //                        break;
+                    case R.id.home_fragment:
+                        isHome = true;
+//                        replaceFragment(new HomeFragment());
+                        replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
+                        break;
                 }
                 item.setChecked(true);
                 drawer_layout.closeDrawers();
@@ -142,7 +155,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        if (isHome) {
+            getMenuInflater().inflate(R.menu.menu_main, menu);
+        }
+//
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -165,26 +181,10 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         int itemId = item.getItemId();
-        if (itemId == R.id.action_settings) {
-            ShowToastUtils.Short("主页");
-            if (navigaItem != null) {
-                navigaItem.setChecked(false);
-            }
-            replaceFragment(new HomeFragment());
-            return true;
-
-        }
-        if (itemId == R.id.action_setting) {
-            ShowToastUtils.Short("设置");
-            return true;
-        }
         if (itemId == R.id.action_save) {
             ShowToastUtils.Short("保存排班");
-            return true;
-        }
-        if (itemId == R.id.action_enter) {
-            Intent intent = new Intent(MainActivity.this, SickHistoryActivity.class);
-            startActivity(intent);
+            HomeFragment homeFragment = (HomeFragment) FragmentFactory.createFragment(HomeFragment.class);
+            homeFragment.save();
             return true;
         }
         return super.onOptionsItemSelected(item);
