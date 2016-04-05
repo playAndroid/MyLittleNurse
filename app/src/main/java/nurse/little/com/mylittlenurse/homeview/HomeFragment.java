@@ -3,6 +3,7 @@ package nurse.little.com.mylittlenurse.homeview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.orhanobut.logger.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.greenrobot.dao.query.QueryBuilder;
 import nurse.little.com.mylittlenurse.DaoSession;
 import nurse.little.com.mylittlenurse.DiaylsDate;
 import nurse.little.com.mylittlenurse.DiaylsDateDao;
@@ -85,6 +87,33 @@ public class HomeFragment extends Fragment {
         diaylsDateDao = daoSession.getDiaylsDateDao();
         initCalendar();
         initRecyclerWei();
+        initRecyclerYi();
+    }
+
+    /**
+     * 已安排
+     */
+    private void initRecyclerYi() {
+        QueryBuilder<DiaylsDate> query = diaylsDateDao.queryBuilder()
+                .where(DiaylsDateDao.Properties.Date
+                        .eq(customDate.year + "" + customDate.month + "" + (customDate.day < 10 ? "0" + customDate.day : customDate.day)));
+        if (query != null && query.list().size() > 0) {
+            List<DiaylsDate> list = query.list();
+            String name = list.get(0).getName();
+            if (!TextUtils.isEmpty(name)) {
+                String[] split = name.split("-");
+                AttCurrentAdapter adapter = new AttCurrentAdapter(getContext(), split);
+                recycler_yianpai.setAdapter(adapter);
+                Utils.setListViewHeightBasedOnChildren(recycler_yianpai);
+            }
+
+        } else {
+            String[] split = new String[]{"未安排患者"};
+            AttCurrentAdapter adapter = new AttCurrentAdapter(getContext(), split);
+            recycler_yianpai.setAdapter(adapter);
+            Utils.setListViewHeightBasedOnChildren(recycler_yianpai);
+        }
+
     }
 
     /**
@@ -138,6 +167,7 @@ public class HomeFragment extends Fragment {
                 Logger.e(date.year + "年" + date.month + "月" + date.day + "日");
                 //存年月日 查也按年月日查
                 customDate = date;
+                initRecyclerYi();
             }
         }, shcList, customDate);
         cal_week.addView(calendarCard);
@@ -157,16 +187,18 @@ public class HomeFragment extends Fragment {
             }
             DiaylsDate diaylsDate = new DiaylsDate();
             diaylsDate.setName(buffer.toString());
-            diaylsDate.setDate(customDate.year + "" + customDate.month + "" + customDate.day);
-//            QueryBuilder<DiaylsDate> qb = diaylsDateDao.queryBuilder();
-//            qb.where(DiaylsDateDao.Properties.Date.eq(customDate.year + "" + customDate.month + "" + customDate.day));
-//            List<DiaylsDate> list = qb.list();
-//            if (list == null) {
-                diaylsDateDao.insert(diaylsDate);
-//            } else {
-//                diaylsDateDao.update(diaylsDate);
-//            }
+            diaylsDate.setDate(customDate.year + "" + customDate.month + "" + (customDate.day < 10 ? "0" + customDate.day : customDate.day));
 
+            /**
+             * 查询是否存在 ,存在则删除
+             */
+            QueryBuilder<DiaylsDate> query = diaylsDateDao.queryBuilder()
+                    .where(DiaylsDateDao.Properties.Date
+                            .eq(customDate.year + "" + customDate.month + "" + customDate.day));
+            if (query.list().size() > 0) {
+                diaylsDateDao.deleteByKey(query.list().get(0).getId());
+            }
+            diaylsDateDao.insert(diaylsDate);
             ShowToastUtils.Short("保存成功");
         } else {
             ShowToastUtils.Short("未录入或选择病人信息");

@@ -7,10 +7,12 @@ import java.io.Serializable;
 /**
  * Entity mapped to table "SICK_PEOPLE".
  */
-public class SickPeople implements Serializable{
+public class SickPeople implements Serializable {
 
     private Long id;
-    /** Not-null value. */
+    /**
+     * Not-null value.
+     */
     private String name;
     private String age;
     private String sex;
@@ -53,12 +55,16 @@ public class SickPeople implements Serializable{
         this.id = id;
     }
 
-    /** Not-null value. */
+    /**
+     * Not-null value.
+     */
     public String getName() {
         return name;
     }
 
-    /** Not-null value; ensure this value is available before it is saved to the database. */
+    /**
+     * Not-null value; ensure this value is available before it is saved to the database.
+     */
     public void setName(String name) {
         this.name = name;
     }

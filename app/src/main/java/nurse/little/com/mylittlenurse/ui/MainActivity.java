@@ -114,7 +114,7 @@ public class MainActivity extends BaseActivity {
                             public void upDataSuccess() {
                                 isHome = true;
 //                                replaceFragment(new HomeFragment());
-                                replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
+                                replaceFragment(FragmentFactory.createFragment(MessageLookFragment.class));
                             }
                         });
                         replaceFragment(enterMessageFragment);
