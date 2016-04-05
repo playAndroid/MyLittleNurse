@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity {
 //            //透明导航栏 一些手机如果有虚拟键盘的话,虚拟键盘就会变成透明的,挡住底部按钮点击事件所以,最后不要用
 //            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 //        }
+        //试试git好使了没
 //        StatusBarCompat.compat(this, getResources().getColor(R.color.primary));
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
