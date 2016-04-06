@@ -1,8 +1,11 @@
 package nurse.little.com.mylittlenurse.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -62,5 +65,35 @@ public class Utils {
 
         listView.setLayoutParams(params);
 
+    }
+
+    /**
+     * 隐藏软键盘
+     *
+     * @param activity
+     *            要隐藏软键盘的activity
+     */
+    public static void hideSoftKeyBoard(Activity activity) {
+        final View v = activity.getWindow().peekDecorView();
+        if (v != null && v.getWindowToken() != null) {
+            try {
+                ((InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(activity.getCurrentFocus()
+                        .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 显示软键盘
+     *
+     * @param context
+     * @param editText
+     */
+    public static void showSoftKeyBroad(Context context, EditText editText) {
+        InputMethodManager mgr = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        // only will trigger it if no physical keyboard is open
+        mgr.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
     }
 }

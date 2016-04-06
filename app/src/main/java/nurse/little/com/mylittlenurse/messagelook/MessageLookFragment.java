@@ -42,9 +42,6 @@ public class MessageLookFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        dataDaoUtils = DataDaoUtils.getInstance();
-//        dataDaoUtils.initDB(getContext(), TableName.DB_SICK_NAME);
-//        dataDaoUtils = new DataDaoUtils(getContext(), TableName.DB_SICK_NAME);
         DaoSession daoSession = NurseApplication.getDaoSession(getContext(), TableName.DB_SICK_NAME);
         sickPeopleDao = daoSession.getSickPeopleDao();
         sickPeoples = sickPeopleDao.loadAll();
@@ -89,6 +86,7 @@ public class MessageLookFragment extends BaseFragment {
                 }
             }
         });
+
     }
 
     private void initRecycler() {
@@ -131,13 +129,9 @@ public class MessageLookFragment extends BaseFragment {
                     }
                 });
                 builder.show();
-//                refresh_layout.setRefreshing(true);
-//                recycler_view.notifyAll();
-//                recycler_view.removeItemDecoration(400);
             }
         });
     }
-
 
 
 }

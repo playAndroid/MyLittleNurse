@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private MenuItem navigaItem;
     protected long endTime;
     private Toolbar toolbar;
-    private boolean isHome = true;
+//    private FragmentState fragmentState = FragmentState.HOME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,13 @@ public class MainActivity extends BaseActivity {
         registerListener();
 //        replaceFragment(new HomeFragment());
         replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
+    }
+
+    /**
+     * Fragment类型  HOME:主页 ENMS :录入信息 MESLOOK:信息预览 BROCON: 宣教
+     */
+    private enum FragmentState {
+        HOME, ENMS, MESLOOK, BROCON
     }
 
 
@@ -107,40 +114,28 @@ public class MainActivity extends BaseActivity {
                 navigaItem = item;
                 switch (itemId) {
                     case R.id.enter_message:
-                        isHome = false;
                         EnterMessageFragment enterMessageFragment = new EnterMessageFragment();
                         enterMessageFragment.setOnUpDataListener(new OnUpDataListener() {
                             @Override
                             public void upDataSuccess() {
-                                isHome = true;
-//                                replaceFragment(new HomeFragment());
                                 replaceFragment(FragmentFactory.createFragment(MessageLookFragment.class));
                             }
                         });
                         replaceFragment(enterMessageFragment);
                         break;
                     case R.id.message_look:
-                        isHome = false;
-//                        replaceFragment(new MessageLookFragment());
                         replaceFragment(FragmentFactory.createFragment(MessageLookFragment.class));
                         break;
                     case R.id.brocat_content:
-                        isHome = false;
-//                        replaceFragment(new BroadCatmessFragment());
                         replaceFragment(FragmentFactory.createFragment(BroadCatmessFragment.class));
                         break;
-//                    case R.id.enter_bingshi:
-//                        Intent intent = new Intent(MainActivity.this, SickHistoryActivity.class);
-//                        startActivity(intent);
-//                        break;
                     case R.id.home_fragment:
-                        isHome = true;
-//                        replaceFragment(new HomeFragment());
                         replaceFragment(FragmentFactory.createFragment(HomeFragment.class));
                         break;
                 }
                 item.setChecked(true);
                 drawer_layout.closeDrawers();
+//                drawerToggle.onDrawerClosed(drawer_layout);
                 return true;
             }
         });
@@ -149,17 +144,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (navigaItem != null) {
-            navigaItem.setChecked(false);
-        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (isHome) {
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-        }
-//
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -179,13 +167,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (drawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        int itemId = item.getItemId();
-        if (itemId == R.id.action_save) {
-            ShowToastUtils.Short("保存排班");
-            HomeFragment homeFragment = (HomeFragment) FragmentFactory.createFragment(HomeFragment.class);
-            homeFragment.save();
             return true;
         }
         return super.onOptionsItemSelected(item);

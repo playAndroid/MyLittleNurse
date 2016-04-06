@@ -21,8 +21,10 @@ public class BaseActivity extends AppCompatActivity {
      */
     public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //        transaction.setCustomAnimations(R.animator.slide_in_left,R.animator.slide_out_right);
         transaction.replace(R.id.frame_layout, fragment);
+//        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

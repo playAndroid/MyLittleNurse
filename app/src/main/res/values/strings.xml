@@ -18,7 +18,8 @@
     <string name="alldelete">全部删除</string>
     <string name="entersick">病史录入</string>
     <string name="save">保存修改</string>
-    <string name="detele">删除数据</string>
+    <string name="detele">删除记录</string>
+    <string name="add">添加记录</string>
 
     <string name="sunday">日</string>
     <string name="monday">一</string>
@@ -27,4 +28,7 @@
     <string name="thursday">四</string>
     <string name="friday">五</string>
     <string name="saturday">六</string>
+
+
+    <string name="record">记录时间:</string>
 </resources>

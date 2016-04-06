@@ -5,6 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -68,6 +71,33 @@ public class HomeFragment extends Fragment {
     private DiaylsDateDao diaylsDateDao;
     private ArrayList<String> names;
     public CustomDate nowDate;
+    private AttDataAdapter adapter;
+    private DiaylsDate diaylsDate;
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_save:
+                save();
+                break;
+            case R.id.action_delete:
+                delete();
+                break;
+        }
+        return true;
+    }
 
     @Nullable
     @Override
@@ -77,6 +107,19 @@ public class HomeFragment extends Fragment {
         recycler_yianpai = (ListView) view.findViewById(R.id.listview_content);
         recycler_weianpai = (ListView) view.findViewById(R.id.bo_listview);
         return view;
+    }
+
+    /**
+     * 删除数据
+     */
+    public void delete() {
+        if (null != diaylsDate) {
+            diaylsDateDao.delete(diaylsDate);
+            initRecyclerYi();
+            calendarCard.changeState(fillDataList());
+            ShowToastUtils.Short("已删除");
+        }
+
     }
 
     @Override
@@ -99,6 +142,7 @@ public class HomeFragment extends Fragment {
                         .eq(customDate.year + "" + customDate.month + "" + (customDate.day < 10 ? "0" + customDate.day : customDate.day)));
         if (query != null && query.list().size() > 0) {
             List<DiaylsDate> list = query.list();
+            diaylsDate = list.get(0);
             String name = list.get(0).getName();
             if (!TextUtils.isEmpty(name)) {
                 String[] split = name.split("-");
@@ -106,7 +150,6 @@ public class HomeFragment extends Fragment {
                 recycler_yianpai.setAdapter(adapter);
                 Utils.setListViewHeightBasedOnChildren(recycler_yianpai);
             }
-
         } else {
             String[] split = new String[]{"未安排患者"};
             AttCurrentAdapter adapter = new AttCurrentAdapter(getContext(), split);
@@ -128,7 +171,7 @@ public class HomeFragment extends Fragment {
             for (int i = 0; i < sickPeoples.size(); i++) {
                 names.add(sickPeoples.get(i).getName());
             }
-            AttDataAdapter adapter = new AttDataAdapter(getContext(), names, new AttDataAdapter.OnTextClickListener() {
+            adapter = new AttDataAdapter(getContext(), names, new AttDataAdapter.OnTextClickListener() {
                 @Override
                 public void clickData(ArrayList<String> sList) {
                     if (shcList != null) {
@@ -146,18 +189,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void initCalendar() {
-        shcList = new ArrayList<>();
+        shcList = fillDataList();
         customDate = new CustomDate();
-        List<DiaylsDate> diaylsDates = diaylsDateDao.loadAll();
-        for (int i = 0; i < diaylsDates.size(); i++) {
-            String date = diaylsDates.get(i).getDate();
-//            try {
-            shcList.add(Integer.parseInt(date.substring(date.length() - 2)));
-//            } catch (Exception e) {
-////                throw new IllegalFormatException("");
-//            }
-
-        }
         calendarCard = new CalendarCard(getContext(), new CalendarCard.OnCellClickListener() {
 
 
@@ -171,6 +204,19 @@ public class HomeFragment extends Fragment {
             }
         }, shcList, customDate);
         cal_week.addView(calendarCard);
+    }
+
+    /**
+     * 填充数据到shcList
+     */
+    private ArrayList<Integer> fillDataList() {
+        ArrayList<Integer> shc = new ArrayList<>();
+        List<DiaylsDate> diaylsDates = diaylsDateDao.loadAll();
+        for (int i = 0; i < diaylsDates.size(); i++) {
+            String date = diaylsDates.get(i).getDate();
+            shc.add(Integer.parseInt(date.substring(date.length() - 2)));
+        }
+        return shc;
     }
 
 
@@ -194,7 +240,7 @@ public class HomeFragment extends Fragment {
              */
             QueryBuilder<DiaylsDate> query = diaylsDateDao.queryBuilder()
                     .where(DiaylsDateDao.Properties.Date
-                            .eq(customDate.year + "" + customDate.month + "" + customDate.day));
+                            .eq(customDate.year + "" + customDate.month + "" + (customDate.day < 10 ? "0" + customDate.day : customDate.day)));
             if (query.list().size() > 0) {
                 diaylsDateDao.deleteByKey(query.list().get(0).getId());
             }
@@ -203,6 +249,9 @@ public class HomeFragment extends Fragment {
         } else {
             ShowToastUtils.Short("未录入或选择病人信息");
         }
+//        initRecyclerWei();
+        initRecyclerYi();
+        calendarCard.changeState(fillDataList());
 
     }
 }

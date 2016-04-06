@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addition"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingLeft="20dp"
+    android:orientation="vertical"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/xuan_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="宣教内容"
+        android:textColor="@color/six_three"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/xuan_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="录入时间"
+        android:textColor="@color/gray_text"
+        android:textSize="12sp" />
+
+    <View
+        style="@style/divider1"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>
