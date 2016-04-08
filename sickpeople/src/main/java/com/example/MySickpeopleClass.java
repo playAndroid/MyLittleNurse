@@ -31,6 +31,7 @@ public class MySickpeopleClass {
         // 一旦你拥有了一个 Schema 对象后，你便可以使用它添加实体（Entities）了。
         addSickPeople(schema, "SickPeople");
         addDiaylsDateInfo(schema, "DiaylsDate");
+        addXuanJiao(schema, "XuanJiao");
 //        addSickHistory(schema, "SickHistory");
 
         // 最后我们将使用 DAOGenerator 类的 generateAll() 方法自动生成代码，此处你需要根据自己的情况更改输出目录（既之前创建的 java-gen)。
@@ -59,6 +60,28 @@ public class MySickpeopleClass {
 //        people.addStringProperty("name");
 //        people.addStringProperty("sickDes");
 //    }
+
+    /**
+     * 插入病史数据库
+     *
+     * @param schema
+     * @param sickHistory
+     */
+    private static void addXuanJiao(Schema schema, String sickHistory) {
+        // 一个实体（类）就关联到数据库中的一张表，此处表名为「Note」（既类名）
+        Entity people = schema.addEntity(sickHistory);
+        // 你也可以重新给表命名
+        // note.setTableName("NODE");
+
+        // greenDAO 会自动根据实体类的属性值来创建表字段，并赋予默认值
+        // 接下来你便可以设置表中的字段：
+        people.addIdProperty().primaryKey().autoincrement();
+        people.addStringProperty("time");
+        // 与在 Java 中使用驼峰命名法不同，默认数据库中的命名是使用大写和下划线来分割单词的。
+        // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
+        people.addStringProperty("content");
+    }
+
 
     /**
      * 插入透析日期数据库
