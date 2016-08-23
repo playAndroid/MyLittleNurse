@@ -25,7 +25,6 @@ public class AttCurrentAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         if (srtList.length % 3 == 0) {
             return srtList.length / 3;
         } else {
@@ -36,28 +35,20 @@ public class AttCurrentAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        // TODO Auto-generated method stub
         return srtList[position];
     }
 
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
         if (convertView == null) {
-
-
-            for (int i = 0; i < srtList.length; i++) {
-                Log.e("test----", srtList[i]);
-            }
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_att_item, null);
+            convertView = inflater.inflate(R.layout.list_att_item, parent);
 
             TextView textView1 = (TextView) convertView
                     .findViewById(R.id.textView1);
@@ -76,24 +67,24 @@ public class AttCurrentAdapter extends BaseAdapter {
 
                         textView1.setText(srtList[3 * position]);
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     }
                     try {
                         textView2.setText(srtList[3 * position + 1]);
 
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     }
 
                     try {
 
                         textView3.setText(srtList[3 * position + 2]);
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     }
                 }
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
         }
 

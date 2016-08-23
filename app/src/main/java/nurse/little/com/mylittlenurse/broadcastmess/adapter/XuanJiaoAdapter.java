@@ -13,7 +13,8 @@ import nurse.little.com.mylittlenurse.R;
 import nurse.little.com.mylittlenurse.XuanJiao;
 
 /**
- * Created by user on 2016/4/6.
+ * @author hlk
+ *         Created by user on 2016/4/6.
  */
 public class XuanJiaoAdapter extends RecyclerView.Adapter<XuanJiaoAdapter.ViewHolder> {
 
@@ -36,15 +37,15 @@ public class XuanJiaoAdapter extends RecyclerView.Adapter<XuanJiaoAdapter.ViewHo
     @Override
     public void onBindViewHolder(final XuanJiaoAdapter.ViewHolder holder, final int position) {
         final XuanJiao xuanJiao = xuanJiaos.get(position);
-        holder.xuan_content.setText(position + 1 + ":" + xuanJiao.getContent());
-        holder.xuan_time.setText(R.string.record + xuanJiao.getTime());
+        holder.xuan_content.setText(context.getResources().getString(R.string.xj_content, position + 1, xuanJiao.getContent()));
+        holder.xuan_time.setText(context.getString(R.string.record, xuanJiao.getTime()));
 
-        if (mOnItemClickLitener != null) {
+        if (mOnItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    mOnItemClickLitener.onItemClick(holder.itemView, pos, xuanJiao);
+                    mOnItemClickListener.onItemClick(holder.itemView, pos, xuanJiao);
                 }
             });
 
@@ -52,7 +53,7 @@ public class XuanJiaoAdapter extends RecyclerView.Adapter<XuanJiaoAdapter.ViewHo
                 @Override
                 public boolean onLongClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    mOnItemClickLitener.onItemLongClick(holder.itemView, pos, xuanJiao);
+                    mOnItemClickListener.onItemLongClick(holder.itemView, pos, xuanJiao);
                     return true;
                 }
             });
@@ -76,15 +77,15 @@ public class XuanJiaoAdapter extends RecyclerView.Adapter<XuanJiaoAdapter.ViewHo
         }
     }
 
-    private OnItemClickLitener mOnItemClickLitener;
+    private OnItemClickListener mOnItemClickListener;
 
-    public interface OnItemClickLitener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position, XuanJiao xuanJiao);
 
         void onItemLongClick(View view, int position, XuanJiao xuanJiao);
     }
 
-    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
-        this.mOnItemClickLitener = mOnItemClickLitener;
+    public void setOnItemClickListener(OnItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
     }
 }

@@ -21,17 +21,14 @@ public class WeiAnPaiAdapter extends RecyclerView.Adapter<WeiAnPaiAdapter.ViewHo
 
 
     private final ArrayList<String> data;
-    private final Context context;
 
     public WeiAnPaiAdapter(Context context, ArrayList<String> list) {
-        this.context = context;
         this.data = list;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-//        View view = View.inflate(context, R.layout.home_fragment_weianpai, null);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_fragment_weianpai, parent, false);
         return new ViewHolder(view);
     }

@@ -70,8 +70,6 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> upDateNum = new ArrayList<>();
     private DiaylsDateDao diaylsDateDao;
     private ArrayList<String> names;
-    public CustomDate nowDate;
-    private AttDataAdapter adapter;
     private DiaylsDate diaylsDate;
 
 
@@ -164,14 +162,12 @@ public class HomeFragment extends Fragment {
      */
     private void initRecyclerWei() {
         List<SickPeople> sickPeoples = sickPeopleDao.loadAll();
-        if (sickPeoples == null || sickPeoples.isEmpty()) {
-            return;
-        } else {
+        if (sickPeoples != null && sickPeoples.isEmpty()) {
             names = new ArrayList<>();
             for (int i = 0; i < sickPeoples.size(); i++) {
                 names.add(sickPeoples.get(i).getName());
             }
-            adapter = new AttDataAdapter(getContext(), names, new AttDataAdapter.OnTextClickListener() {
+            AttDataAdapter adapter = new AttDataAdapter(getContext(), names, new AttDataAdapter.OnTextClickListener() {
                 @Override
                 public void clickData(ArrayList<String> sList) {
                     if (shcList != null) {
@@ -196,7 +192,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void clickDate(CustomDate date) {
-//                Toast.makeText(getContext(), date.day + "", Toast.LENGTH_SHORT).show();
                 Logger.e(date.year + "年" + date.month + "月" + date.day + "日");
                 //存年月日 查也按年月日查
                 customDate = date;
@@ -222,13 +217,13 @@ public class HomeFragment extends Fragment {
 
     public void save() {
         if (upDateNum != null && !upDateNum.isEmpty()) {
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             for (int i = 0; i < upDateNum.size(); i++) {
                 String s = upDateNum.get(i);
                 if (i == upDateNum.size() - 1) {
                     buffer.append(s);
                 } else {
-                    buffer.append(s + "-");
+                    buffer.append(s).append("-");
                 }
             }
             DiaylsDate diaylsDate = new DiaylsDate();

@@ -17,7 +17,7 @@ public class BaseActivity extends AppCompatActivity {
      * 替换fragment
      *
      * @param id_content
-     * @param fragment
+     * @param fragment 要替换的fragment
      */
     public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

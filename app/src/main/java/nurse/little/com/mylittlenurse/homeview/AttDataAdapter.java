@@ -35,18 +35,6 @@ public class AttDataAdapter extends BaseAdapter {
         this.srtList = srtList;
         selectList = new ArrayList<String>();
         this.map = map;
-//			map = new HashMap<String, Boolean>();
-//
-//
-//			for (String srtString : srtList) {
-//				map.put(srtString, false);
-//			}
-//
-//			for (int i = 0; i < srtList.size(); i++) {
-//				map.put(i + "", false);
-//			}
-//			map.put("iszhu", false);
-//			map.put("isxiu", false);
         this.listener = listener;
 
     }
@@ -79,29 +67,27 @@ public class AttDataAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         return srtList.size() / 3 + 1;
     }
 
     @Override
     public Object getItem(int position) {
-        // TODO Auto-generated method stub
         return srtList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.list_att_item, parent);
+        }
 
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.list_att_item, null);
 
         final TextView textView1 = (TextView) convertView
                 .findViewById(R.id.textView1);
@@ -114,13 +100,11 @@ public class AttDataAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-
                 if (("不需驻场").equals(textView1.getText().toString())
                         || ("休息").equals(textView1.getText().toString())) {
 
 
-                    if (map.get("iszhu") == false) {
+                    if (!map.get("iszhu")) {
                         textView1
                                 .setBackgroundResource(R.drawable.ic_click_true);
                         textView1.setTextColor(Color.parseColor("#0064c9"));
@@ -145,7 +129,7 @@ public class AttDataAdapter extends BaseAdapter {
                 } else {
 
 
-                    if (map.get(3 * position + "") == false) {
+                    if (!map.get(3 * position + "")) {
 
                         textView1
                                 .setBackgroundResource(R.drawable.ic_click_true);
@@ -172,11 +156,9 @@ public class AttDataAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-
                 try {
 
-                    if (map.get(3 * position + 1 + "") == false) {
+                    if (!map.get(3 * position + 1 + "")) {
 
                         textView2
                                 .setBackgroundResource(R.drawable.ic_click_true);
@@ -194,7 +176,7 @@ public class AttDataAdapter extends BaseAdapter {
                     listener.clickData(selectList);
                     notifyDataSetChanged();
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 }
 
             }
@@ -204,11 +186,9 @@ public class AttDataAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-
                 try {
 
-                    if (map.get(3 * position + 2 + "") == false) {
+                    if (!map.get(3 * position + 2 + "")) {
 
                         textView3
                                 .setBackgroundResource(R.drawable.ic_click_true);
@@ -226,7 +206,7 @@ public class AttDataAdapter extends BaseAdapter {
                     listener.clickData(selectList);
                     notifyDataSetChanged();
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 }
 
             }
@@ -241,74 +221,27 @@ public class AttDataAdapter extends BaseAdapter {
                     textView1.setText(srtList.get(3 * position));
 
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 }
                 try {
                     textView2.setText(srtList.get(3 * position + 1));
 
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 }
 
                 try {
 
                     textView3.setText(srtList.get(3 * position + 2));
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 }
             }
-
-//			if (("不需驻场").equals(textView1.getText().toString())
-//					|| ("休息").equals(textView1.getText().toString())) {
-//				if (map.get("iszhu") == true) {
-//					textView1.setBackgroundResource(R.drawable.ic_click_true);
-//					textView1.setTextColor(Color.parseColor("#0064c9"));
-//
-//					textView2.setBackgroundResource(R.drawable.ic_click_no);
-//					textView3.setBackgroundResource(R.drawable.ic_click_no);
-//				} else {
-//					textView1.setBackgroundResource(R.drawable.ic_click_no);
-//					textView1.setTextColor(Color.parseColor("#666666"));
-//
-//					if (map.get(textView2.getText().toString()) == true) {
-//						textView2
-//								.setBackgroundResource(R.drawable.ic_click_true);
-//					} else {
-//						textView2.setBackgroundResource(R.drawable.ic_click_no);
-//					}
-//
-//					if (map.get(textView3.getText().toString()) == true) {
-//						textView3
-//								.setBackgroundResource(R.drawable.ic_click_true);
-//					} else {
-//						textView3.setBackgroundResource(R.drawable.ic_click_no);
-//					}
-//				}
-//			} else {
-//				if (map.get(textView1.getText().toString()) == true) {
-//					textView1.setBackgroundResource(R.drawable.ic_click_true);
-//				} else {
-//					textView1.setBackgroundResource(R.drawable.ic_click_no);
-//				}
-//
-//				if (map.get(textView2.getText().toString()) == true) {
-//					textView2.setBackgroundResource(R.drawable.ic_click_true);
-//				} else {
-//					textView2.setBackgroundResource(R.drawable.ic_click_no);
-//				}
-//
-//				if (map.get(textView3.getText().toString()) == true) {
-//					textView3.setBackgroundResource(R.drawable.ic_click_true);
-//				} else {
-//					textView3.setBackgroundResource(R.drawable.ic_click_no);
-//				}
-//
-//			}
 
 
             if (("不需驻场").equals(textView1.getText().toString())
                     || ("休息").equals(textView1.getText().toString())) {
-                if (map.get("iszhu") == true) {
+                if (!map.get("iszhu")) {
                     textView1.setBackgroundResource(R.drawable.ic_click_true);
                     textView1.setTextColor(Color.parseColor("#0064c9"));
 
@@ -318,14 +251,14 @@ public class AttDataAdapter extends BaseAdapter {
                     textView1.setBackgroundResource(R.drawable.ic_click_no);
                     textView1.setTextColor(Color.parseColor("#666666"));
 
-                    if (map.get(3 * position + 1 + "") == true) {
+                    if (!map.get(3 * position + 1 + "")) {
                         textView2
                                 .setBackgroundResource(R.drawable.ic_click_true);
                     } else {
                         textView2.setBackgroundResource(R.drawable.ic_click_no);
                     }
 
-                    if (map.get(3 * position + 2 + "") == true) {
+                    if (!map.get(3 * position + 2 + "")) {
                         textView3
                                 .setBackgroundResource(R.drawable.ic_click_true);
                     } else {
@@ -333,19 +266,19 @@ public class AttDataAdapter extends BaseAdapter {
                     }
                 }
             } else {
-                if (map.get(3 * position + "") == true) {
+                if (!map.get(3 * position + "")) {
                     textView1.setBackgroundResource(R.drawable.ic_click_true);
                 } else {
                     textView1.setBackgroundResource(R.drawable.ic_click_no);
                 }
 
-                if (map.get(3 * position + 1 + "") == true) {
+                if (!map.get(3 * position + 1 + "")) {
                     textView2.setBackgroundResource(R.drawable.ic_click_true);
                 } else {
                     textView2.setBackgroundResource(R.drawable.ic_click_no);
                 }
 
-                if (map.get(3 * position + 2 + "") == true) {
+                if (!map.get(3 * position + 2 + "")) {
                     textView3.setBackgroundResource(R.drawable.ic_click_true);
                 } else {
                     textView3.setBackgroundResource(R.drawable.ic_click_no);
@@ -366,25 +299,10 @@ public class AttDataAdapter extends BaseAdapter {
             }
 
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
 
         return convertView;
-
-    }
-
-    public void reSet() {
-
-        for (String srtString : srtList) {
-            map.put(srtString, false);
-        }
-        for (int i = 0; i < srtList.size(); i++) {
-            map.put(i + "", false);
-        }
-        map.put("iszhu", false);
-        map.put("isxiu", false);
-        selectList.clear();
-        notifyDataSetChanged();
 
     }
 

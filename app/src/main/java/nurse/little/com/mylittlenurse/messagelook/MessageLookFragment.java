@@ -34,7 +34,6 @@ public class MessageLookFragment extends BaseFragment {
     private RecyclerView recycler_view;
     private SickPeopleDao sickPeopleDao;
     private View message_look_linear;
-    private View message_look_title;
     private List<SickPeople> sickPeoples;
     private MessageLookAdapter messageLookAdapter;
     //    private DataDaoUtils dataDaoUtils;
@@ -54,7 +53,6 @@ public class MessageLookFragment extends BaseFragment {
         refresh_layout = (SwipeRefreshLayout) view.findViewById(R.id.refresh_layout);
         recycler_view = (RecyclerView) view.findViewById(R.id.recycler_view);
         message_look_linear = view.findViewById(R.id.message_look_linear);
-        message_look_title = view.findViewById(R.id.message_look_title);
         return view;
     }
 

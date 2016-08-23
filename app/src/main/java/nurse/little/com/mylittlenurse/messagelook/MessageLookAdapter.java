@@ -44,6 +44,8 @@ public class MessageLookAdapter extends RecyclerView.Adapter<MessageLookAdapter.
         return new ViewHolder(view);
     }
 
+
+
     @Override
     public void onBindViewHolder(final MessageLookAdapter.ViewHolder holder, final int position) {
         holder.name.setText(list.get(position).getName());

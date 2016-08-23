@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -53,13 +54,12 @@ public class DetailsMessageActivity extends BaseActivity {
 
     private Long id;
     private SickPeopleDao sickPeopleDao;
-    private DaoSession daoSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_details);
-        daoSession = NurseApplication.getDaoSession(this, TableName.DB_SICK_NAME);
+        DaoSession daoSession = NurseApplication.getDaoSession(this, TableName.DB_SICK_NAME);
         sickPeopleDao = daoSession.getSickPeopleDao();
         Intent intent = getIntent();
         sick = (SickPeople) intent.getSerializableExtra("sick");
@@ -119,7 +119,7 @@ public class DetailsMessageActivity extends BaseActivity {
             people.setHeight(shengao_counter.getText().toString().trim());
             people.setWeight(tizhong_counter.getText().toString().trim());
             people.setTel(dianhuazu_counter.getText().toString().trim());
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             String time = dateFormat.format(new Date());
             people.setTime(time);
             people.setMailou(jingmaizu.getText().toString().trim());

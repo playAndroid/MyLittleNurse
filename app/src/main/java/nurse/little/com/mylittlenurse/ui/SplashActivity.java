@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import nurse.little.com.mylittlenurse.R;
 
 /**
+ * @author hlk
  * Created by user on 2016/3/9.
  */
 public class SplashActivity extends AppCompatActivity {
@@ -72,7 +73,6 @@ public class SplashActivity extends AppCompatActivity {
             "任何时候都可以开始做自己想做的事",
             "你只有足够努力,才能与你喜欢的更相配"
     };
-    private Random random;
     private static final int ANIMATION_DURATION = 2000;
 
     @Override
@@ -81,7 +81,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 //        Logger.init();
         ButterKnife.bind(this);
-        random = new Random(SystemClock.elapsedRealtime());
+        Random random = new Random(SystemClock.elapsedRealtime());
         Logger.d(SystemClock.elapsedRealtime() + "");
         splashImage.setImageResource(SPLASH_ARRAY[random.nextInt(SPLASH_ARRAY.length)]);
         title.setText("最美の天使");

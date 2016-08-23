@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\selection_divider.9.png",
-        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\drawable-xhdpi-v4\\selection_divider.9.png"
+        "merged": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
-        "source": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+        "merged": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\selection_divider.9.png",
+        "source": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\drawable-xhdpi-v4\\selection_divider.9.png"
     }
 ]

@@ -30,5 +30,6 @@
     <string name="saturday">六</string>
 
 
-    <string name="record">记录时间:</string>
+    <string name="record">记录时间:%1$s</string>
+    <string name="xj_content">%1$d:%2$s</string>
 </resources>

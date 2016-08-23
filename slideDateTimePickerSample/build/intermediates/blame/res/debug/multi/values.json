@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "outputFile": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 112
                 },
                 "from": {
-                    "file": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\values\\values.xml",
+                    "file": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\values\\values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 175
                 },
                 "from": {
-                    "file": "E:\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\values\\values.xml",
+                    "file": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\build\\intermediates\\exploded-aar\\MyLittleNurse\\slideDateTimePicker\\unspecified\\res\\values\\values.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 239
                 },
                 "from": {
-                    "file": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\strings.xml",
+                    "file": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -69,7 +69,7 @@
                     "endOffset": 535
                 },
                 "from": {
-                    "file": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\styles.xml",
+                    "file": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -90,7 +90,7 @@
                     "endOffset": 695
                 },
                 "from": {
-                    "file": "E:\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\styles.xml",
+                    "file": "E:\\gitapp\\MyLittleNurse\\slideDateTimePickerSample\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,

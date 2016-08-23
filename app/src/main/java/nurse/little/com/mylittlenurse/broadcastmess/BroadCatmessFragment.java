@@ -132,7 +132,7 @@ public class BroadCatmessFragment extends BaseFragment {
             message_look_linear.setVisibility(View.GONE);
             xuanJiaoAdapter = new XuanJiaoAdapter(getContext(), xuanJiaos);
             recycler_view.setAdapter(xuanJiaoAdapter);
-            xuanJiaoAdapter.setOnItemClickLitener(new XuanJiaoAdapter.OnItemClickLitener() {
+            xuanJiaoAdapter.setOnItemClickListener(new XuanJiaoAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position, XuanJiao xuanJiao) {
 
