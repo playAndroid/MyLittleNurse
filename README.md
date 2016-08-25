@@ -6,4 +6,3 @@
 - Stetho
 - Looger
 - ButterKnife
-- Bomb
