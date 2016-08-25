@@ -31,6 +31,8 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import nurse.little.com.mylittlenurse.DaoSession;
 import nurse.little.com.mylittlenurse.R;
 import nurse.little.com.mylittlenurse.SickPeople;
@@ -450,6 +452,16 @@ public class EnterMessageFragment extends BaseFragment {
          this.yingyang = yingyang;
          */
         sickPeopleDao.insert(people);
+        people.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+                if(e==null){
+                    ShowToastUtils.Short("添加数据成功，返回objectId为："+s);
+                }else{
+                    ShowToastUtils.Short("创建数据失败：" + e.getMessage());
+                }
+            }
+        });
         ShowToastUtils.Short("录入成功");
         if (onUpDataListener != null) {
             onUpDataListener.upDataSuccess();

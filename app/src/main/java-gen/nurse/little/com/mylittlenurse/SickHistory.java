@@ -4,10 +4,12 @@ package nurse.little.com.mylittlenurse;
 
 import java.io.Serializable;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * Entity mapped to table "SICK_HISTORY".
  */
-public class SickHistory implements Serializable{
+public class SickHistory extends BmobObject implements Serializable  {
 
     private Long id;
     private String time;

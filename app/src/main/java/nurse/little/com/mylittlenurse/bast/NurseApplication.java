@@ -6,6 +6,7 @@ import android.content.Context;
 import com.facebook.stetho.Stetho;
 import com.orhanobut.logger.Logger;
 
+import cn.bmob.v3.Bmob;
 import nurse.little.com.mylittlenurse.DaoMaster;
 import nurse.little.com.mylittlenurse.DaoSession;
 
@@ -23,7 +24,6 @@ public class NurseApplication extends Application {
     private static final String TAG = "hlk";
 
 
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -34,6 +34,8 @@ public class NurseApplication extends Application {
                 enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this)).build());
         //log 初始化
         Logger.init(TAG);
+        //Bmob初始化
+        Bmob.initialize(this, "17e7054d884880d599a26e884698e5ca");
     }
 
     public static Context getContext() {
